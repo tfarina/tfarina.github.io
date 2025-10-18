@@ -3,14 +3,17 @@
 
   {% include head.html %}
 
-  <body>
+  <body class="bg-gray-50 text-gray-900">
 
     {% include header.html %}
+    {% include nav.html %}
 
-    <div class="page-content">
-      <div class="wrapper">
-        {{ content }}
-      </div>
+    <!-- Main Layout Wrapper -->
+    <div class="flex flex-col md:flex-row max-w-6xl mx-auto">
+      <main class="md:w-3/4 p-4 bg-white">
+	{{ content }}
+      </main>
+      {% include sidebar.html %}
     </div>
 
     {% include footer.html %}
