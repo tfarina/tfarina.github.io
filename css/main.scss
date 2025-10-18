@@ -51,3 +51,7 @@ $on-laptop:        800px;
         "layout",
         "syntax-highlighting"
 ;
+
+.prose p {
+  margin-bottom: 1rem; /* 16px, same as Tailwind mb-4 */
+}
