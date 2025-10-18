@@ -12,3 +12,4 @@ description: >-
   Personal blog about Linux, development, and technical notes.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://tfarina.github.io"
+permalink: /:title/
