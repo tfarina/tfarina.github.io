@@ -5,25 +5,28 @@ pagination:
 enabled: true
 ---
 
-<div class="home prose max-w-none">
-  <header class="mb-10">
+<div class="home max-w-none">
+  <header class="mb-8 pl-6 md:pl-8">
     <h1 class="text-3xl font-bold mb-2">Latest Posts</h1>
-    <!--<p class="text-gray-600 text-lg">...</p>-->
   </header>
 
   {% if paginator.posts %}
-  <div class="grid gap-8 md:grid-cols-2">
+  <div class="space-y-8">
     {% for post in paginator.posts %}
-    <article class="border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-      <h2 class="text-2xl font-semibold mb-2">
-	<a href="{{ post.url | relative_url }}" class="hover:underline">{{ post.title }}</a>
+    <article class="border-t border-gray-200 pt-6 first:border-t-0 px-6 md:px-8">
+      <h2 class="text-2xl font-semibold mb-1">
+	<a href="{{ post.url | relative_url }}" class="hover:underline text-gray-900">
+	  {{ post.title }}
+	</a>
       </h2>
-      <p class="text-sm text-gray-500 mb-3">
+      <p class="text-sm text-gray-500 mb-1">
 	{{ post.date | date: "%B %d, %Y" }}
 	{% if post.category %} • {{ post.category }}{% endif %}
       </p>
       {% if post.excerpt %}
-      <p class="text-gray-700 mb-3">{{ post.excerpt | strip_html | truncate: 180 }}</p>
+      <p class="text-gray-700 mb-2">
+	{{ post.excerpt | strip_html | truncate: 180 }}
+      </p>
       {% endif %}
       <a href="{{ post.url | relative_url }}" class="text-blue-600 hover:underline font-medium">
 	Read more →
@@ -32,14 +35,16 @@ enabled: true
     {% endfor %}
   </div>
   {% else %}
-  <p>No posts yet. Check back soon!</p>
+  <p class="pl-6 md:pl-8">No posts yet. Check back soon!</p>
   {% endif %}
 
   <!-- Pagination -->
   {% if paginator.total_pages > 1 %}
   <nav class="pagination mt-10 flex justify-center items-center gap-4">
     {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path | relative_url }}" class="px-4 py-2 border rounded hover:bg-gray-100">← Newer Posts</a>
+    <a href="{{ paginator.previous_page_path | relative_url }}" class="px-4 py-2 border rounded hover:bg-gray-100">
+      ← Newer Posts
+    </a>
     {% endif %}
 
     <span class="text-gray-500">
@@ -47,7 +52,9 @@ enabled: true
     </span>
 
     {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path | relative_url }}" class="px-4 py-2 border rounded hover:bg-gray-100">Older Posts →</a>
+    <a href="{{ paginator.next_page_path | relative_url }}" class="px-4 py-2 border rounded hover:bg-gray-100">
+      Older Posts →
+    </a>
     {% endif %}
   </nav>
   {% endif %}
