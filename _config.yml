@@ -13,3 +13,7 @@ description: >-
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://tfarina.github.io"
 permalink: /:title/
+paginate: 10
+paginate_path: "/page:num/"
+gems:
+  - jekyll-paginate
