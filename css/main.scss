@@ -55,3 +55,7 @@ $on-laptop:        800px;
 .prose p {
   margin-bottom: 1rem; /* 16px, same as Tailwind mb-4 */
 }
+
+nav ul a:visited {
+  color: inherit;
+}
