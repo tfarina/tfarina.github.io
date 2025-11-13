@@ -59,3 +59,7 @@ $on-laptop:        800px;
 nav ul a:visited {
   color: inherit;
 }
+
+nav a:hover {
+  text-decoration: none !important;
+}
